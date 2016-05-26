@@ -16,6 +16,8 @@ body, html{
 	width: 100%;
 }
 
+.align-center{text-align: center;}
+
 .banner-container{
 	padding: 10px;
 }

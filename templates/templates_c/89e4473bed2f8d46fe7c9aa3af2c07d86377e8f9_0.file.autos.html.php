@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.28, created on 2016-05-26 18:27:15
+/* Smarty version 3.1.28, created on 2016-05-26 19:59:20
   from "/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/autos.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.28',
-  'unifunc' => 'content_574723e313d983_27299897',
+  'unifunc' => 'content_57473978387535_66413842',
   'file_dependency' => 
   array (
     '89e4473bed2f8d46fe7c9aa3af2c07d86377e8f9' => 
     array (
       0 => '/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/autos.html',
-      1 => 1464280034,
+      1 => 1464285548,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:footer.html' => 1,
   ),
 ),false)) {
-function content_574723e313d983_27299897 ($_smarty_tpl) {
+function content_57473978387535_66413842 ($_smarty_tpl) {
 $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -69,7 +69,8 @@ for ($__section_x_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_x']-
 </td>
 								<td>$<?php echo $_smarty_tpl->tpl_vars['cars']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['precio'];?>
 </td>
-								<td><a href="#">Modificar</a></td>
+								<td><a href="modificar_autos.php?id=<?php echo $_smarty_tpl->tpl_vars['cars']->value[(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['idAuto'];?>
+">Modificar</a></td>
 							</tr>
 						<?php
 }
