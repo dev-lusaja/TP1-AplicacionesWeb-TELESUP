@@ -1,9 +1,11 @@
-<?php 
+<?php
 try {
 	require('libs/autoload.php');
-	$templates = new Templates();
+	$templates = new clsTemplates();
+	$templates->assign( 'message', false );
 	$templates->display('index.html');
 } catch (Exception $e) {
-	echo $e->getMessage();
+	$templates->assign( 'message', $e->getMessage() );
+	$templates->display('error.html');
 }
 ?>

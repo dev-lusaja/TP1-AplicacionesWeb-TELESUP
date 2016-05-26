@@ -16,10 +16,6 @@ function __autoload($class_name) {
     	return;
 	}
 
-	// if (strtolower(substr($class_name, 0, 5)) == 'mysql') {
- //    	include "libs/clases/$class_name.class.php";
- //    	return;
-	// }
 	include "libs/clases/$class_name.php";
 }
 ?>

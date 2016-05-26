@@ -1,23 +1,20 @@
-<?php 
+<?php
 try {
 	require('libs/autoload.php');
-	$templates = new Templates();
-	$mysql = new Mysql();
 
-	$usuario = $_POST['inputUsuario'];
-	$clave = $_POST['inputClave'];
-	$tipo = $_POST['tipoUsuario'];
-	$sql = "select * from usuario where Nombre_Usuario='$usuario' and Clave='$clave' and Tipo_Usuario_CodTipo = $tipo";
-	$res = $mysql->Query($sql);
+	$user = $_POST['inputUsuario'];
+	$password = $_POST['inputClave'];
+	$type = $_POST['tipoUsuario'];
 
-	if (count($res) == 0) {
-		throw new Exception("Datos incorrectos");
-	}
-	
-	$templates->assign( 'message', 'login' );
-	$templates->display('error.html');
+	Functions::validateVariable($user, 'string');
+	Functions::validateVariable($password, 'string');
+	Functions::validateVariable($type, 'integer');
+
+	$login = new clsLogin($user, $password, $type);
+	Functions::Location('perfil.php');
 } catch (Exception $e) {
+	$templates = new clsTemplates();
 	$templates->assign( 'message', $e->getMessage() );
-	$templates->display('error.html');
+	$templates->display('index.html');
 }
 ?>

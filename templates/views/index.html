@@ -2,8 +2,8 @@
 <div class="helper"></div><!-- 
  --><div class="container align-helper">
 	<div class="row">
-		<div class="col-lg-3"></div>
-	 	<div class="col-lg-6">
+		<div class="col-lg-4"></div>
+	 	<div class="col-lg-4">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<form class="form-horizontal" method="post" action="login.php">
@@ -11,6 +11,12 @@
 					  	<div class="form-group banner-container">
 					  		<img src="assets/icons/l2.jpg" alt="" class="banner">
 					  	</div>
+					  	{if $message != false}
+						<div class="alert alert-warning alert-dismissible" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						  <strong>Error!</strong> {$message}
+						</div>
+					  	{/if}
 					    <div class="form-group">
 							<label for="inputUsuario" class="col-md-2 control-label">Usuario</label>
 							<div class="col-md-10">
@@ -53,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-3"></div>
+		<div class="col-lg-4"></div>
 	</div>
 </div>
 {include file='footer.html'}

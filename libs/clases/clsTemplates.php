@@ -1,7 +1,7 @@
 <?php 
 require('libs/smarty/Smarty.class.php');
 
-class Templates extends Smarty
+class clsTemplates extends Smarty
 {
 	function __construct()
 	{
