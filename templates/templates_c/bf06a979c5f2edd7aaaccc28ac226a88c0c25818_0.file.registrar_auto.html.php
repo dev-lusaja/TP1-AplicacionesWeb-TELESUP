@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.28, created on 2016-05-27 23:26:52
-  from "/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/editar_auto.html" */
+/* Smarty version 3.1.28, created on 2016-05-28 00:21:12
+  from "/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/registrar_auto.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.28',
-  'unifunc' => 'content_5748bb9ca45992_50895567',
+  'unifunc' => 'content_5748c85820cca4_17969859',
   'file_dependency' => 
   array (
-    'e43f51e6f225b92ae0746a31c70d54dee287eb4e' => 
+    'bf06a979c5f2edd7aaaccc28ac226a88c0c25818' => 
     array (
-      0 => '/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/editar_auto.html',
-      1 => 1464384407,
+      0 => '/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/registrar_auto.html',
+      1 => 1464387668,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:footer.html' => 1,
   ),
 ),false)) {
-function content_5748bb9ca45992_50895567 ($_smarty_tpl) {
+function content_5748c85820cca4_17969859 ($_smarty_tpl) {
 $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,24 +40,24 @@ $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:header.html"
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="container">
-				<form action="update_auto.php" method="post">
+				<form action="insert_auto.php" method="post">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8 align-center">
-							<img class="img-responsive" src="assets/images/<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Imagen'];?>
-" width="626px" height="382px">
-						  	<?php if ($_smarty_tpl->tpl_vars['update_car']->value) {?>
+							<h2>Registro de Autos</h2>
+							<hr>
+						  	<?php if ($_smarty_tpl->tpl_vars['insert_car']->value) {?>
 							<div class="alert alert-success alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Completado!</strong> <?php echo $_smarty_tpl->tpl_vars['update_car']->value;?>
+							  <strong>Completado!</strong> <?php echo $_smarty_tpl->tpl_vars['insert_car']->value;?>
 
 							</div>
 						  	<?php }?>
-						  	<?php if ($_smarty_tpl->tpl_vars['update_car_err']->value) {?>
+						  	<?php if ($_smarty_tpl->tpl_vars['insert_car_err']->value) {?>
 							<div class="alert alert-danger alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Error!</strong> <?php echo $_smarty_tpl->tpl_vars['update_car_err']->value;?>
+							  <strong>Error!</strong> <?php echo $_smarty_tpl->tpl_vars['insert_car_err']->value;?>
 
 							</div>
 						  	<?php }?>
@@ -67,12 +67,10 @@ $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:header.html"
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-4">
-				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['idAuto'];?>
-">
+				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto">
 						  <div class="form-group">
 						    	<label for="cantidad">Cantidad</label>
-						    	<input required="" type="text" class="form-control" id="cantidad" name="cantidad" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['cantidad'];?>
-">
+						    	<input required="" type="text" class="form-control" id="cantidad" name="cantidad">
 						  </div>
 						  <div class="form-group">
 						    <label for="marca">Marca</label>
@@ -85,17 +83,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = new Smarty_Variable(array());
 if ($__section_x_0_total != 0) {
 for ($__section_x_0_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] = 0; $__section_x_0_iteration <= $__section_x_0_total; $__section_x_0_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']++){
 ?>
-								<?php if ($_smarty_tpl->tpl_vars['combo_data']->value['marcas'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codigoMarca'] == $_smarty_tpl->tpl_vars['car']->value[0]['Marca_codigoMarca']) {?>
-									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['marcas'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codigoMarca'];?>
-" selected>
-										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['marcas'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Descripcion'];?>
-
-								<?php } else { ?>
 									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['marcas'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codigoMarca'];?>
 ">
 										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['marcas'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Descripcion'];?>
 
-								<?php }?>
 									</option>
 							<?php
 }
@@ -117,17 +108,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = new Smarty_Variable(array());
 if ($__section_x_1_total != 0) {
 for ($__section_x_1_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] = 0; $__section_x_1_iteration <= $__section_x_1_total; $__section_x_1_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']++){
 ?>
-								<?php if ($_smarty_tpl->tpl_vars['combo_data']->value['modelos'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoModelo'] == $_smarty_tpl->tpl_vars['car']->value[0]['Modelo_CodigoModelo']) {?>
-									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['modelos'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoModelo'];?>
-" selected>
-										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['modelos'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Descripcion'];?>
-
-								<?php } else { ?>
 									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['modelos'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoModelo'];?>
 ">
 										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['modelos'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Descripcion'];?>
 
-								<?php }?>
 									</option>
 							<?php
 }
@@ -140,18 +124,15 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = $__section_x_1_saved;
 						  </div>
 						  <div class="form-group">
 						    <label for="ano_fabricacion">Año de fabricación</label>
-						    <input required="" type="text" class="form-control" id="ano_fabricacion" name="ano_fabricacion" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Ano_fabricacion'];?>
-">
+						    <input required="" type="text" class="form-control" id="ano_fabricacion" name="ano_fabricacion">
 						  </div>
 						  <div class="form-group">
 						    <label for="ano_modelo">Año de modelo</label>
-						    <input required="" type="text" class="form-control" id="ano_modelo" name="ano_modelo" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Ano_Modelo'];?>
-">
+						    <input required="" type="text" class="form-control" id="ano_modelo" name="ano_modelo">
 						  </div>
 						  <div class="form-group">
 						    <label for="n_motor">Número de motor</label>
-						    <input required="" type="text" class="form-control" id="n_motor" name="n_motor" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Numero_Motor'];?>
-">
+						    <input required="" type="text" class="form-control" id="n_motor" name="n_motor">
 						  </div>
 						  <div class="form-group">
 						    <label for="color">Color</label>
@@ -164,17 +145,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = new Smarty_Variable(array());
 if ($__section_x_2_total != 0) {
 for ($__section_x_2_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] = 0; $__section_x_2_iteration <= $__section_x_2_total; $__section_x_2_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']++){
 ?>
-								<?php if ($_smarty_tpl->tpl_vars['combo_data']->value['colores'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoColor'] == $_smarty_tpl->tpl_vars['car']->value[0]['Color_CodigoColor']) {?>
-									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['colores'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoColor'];?>
-" selected>
-										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['colores'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Des'];?>
-
-								<?php } else { ?>
 									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['colores'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['CodigoColor'];?>
 ">
 										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['colores'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['Des'];?>
 
-								<?php }?>
 									</option>
 							<?php
 }
@@ -196,17 +170,10 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = new Smarty_Variable(array());
 if ($__section_x_3_total != 0) {
 for ($__section_x_3_iteration = 1, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] = 0; $__section_x_3_iteration <= $__section_x_3_total; $__section_x_3_iteration++, $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']++){
 ?>
-								<?php if ($_smarty_tpl->tpl_vars['combo_data']->value['combustibles'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codCombustible'] == $_smarty_tpl->tpl_vars['car']->value[0]['Combustible_codCombustible']) {?>
-									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['combustibles'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codCombustible'];?>
-" selected>
-										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['combustibles'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['desCom'];?>
-
-								<?php } else { ?>
 									<option value="<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['combustibles'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['codCombustible'];?>
 ">
 										<?php echo $_smarty_tpl->tpl_vars['combo_data']->value['combustibles'][(isset($_smarty_tpl->tpl_vars['__smarty_section_x']->value['index']) ? $_smarty_tpl->tpl_vars['__smarty_section_x']->value['index'] : null)]['desCom'];?>
 
-								<?php }?>
 									</option>
 							<?php
 }
@@ -219,50 +186,41 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = $__section_x_3_saved;
 						  </div>
 						  <div class="form-group">
 						    <label for="cilindros">Cilindros</label>
-						    <input required="" type="text" class="form-control" id="cilindros" name="cilindros" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Numero_Cilindros'];?>
-">
+						    <input required="" type="text" class="form-control" id="cilindros" name="cilindros">
 						  </div>		
 						</div>
 						<div class="col-lg-4">
 						  <div class="form-group">
 						    <label for="ejes">Ejes</label>
-						    <input required="" type="text" class="form-control" id="ejes" name="ejes" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Ejes'];?>
-">
+						    <input required="" type="text" class="form-control" id="ejes" name="ejes">
 						  </div>
 						  <div class="form-group">
 						    <label for="asientos">Numero de asientos</label>
-						    <input required="" type="text" class="form-control" id="asientos" name="asientos" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Asientos'];?>
-">
+						    <input required="" type="text" class="form-control" id="asientos" name="asientos">
 						  </div>
 						  <div class="form-group">
 						    <label for="traccion">Tracción</label>
-						    <input required="" type="text" class="form-control" id="traccion" name="traccion" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Traccion'];?>
-">
+						    <input required="" type="text" class="form-control" id="traccion" name="traccion">
 						  </div>
 						  <div class="form-group">
 						    <label for="puertas">Número de puertas</label>
-						    <input required="" type="text" class="form-control" id="puertas" name="puertas" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Puertas'];?>
-">
+						    <input required="" type="text" class="form-control" id="puertas" name="puertas">
 						  </div>
 						  <div class="form-group">
 						    <label for="peso_seco">Peso seco</label>
-						    <input required="" type="text" class="form-control" id="peso_seco" name="peso_seco" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Peso_Seco'];?>
-">
+						    <input required="" type="text" class="form-control" id="peso_seco" name="peso_seco">
 						  </div>
 						  <div class="form-group">
 						    <label for="peso_bruto">Peso bruto</label>
-						    <input required="" type="text" class="form-control" id="peso_bruto" name="peso_bruto" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Peso_Bruto'];?>
-">
+						    <input required="" type="text" class="form-control" id="peso_bruto" name="peso_bruto">
 						  </div>
 						  <div class="form-group">
 						    <label for="transmision">Transmision</label>
-						    <input required="" type="text" class="form-control" id="transmision" name="transmision" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['Transmision'];?>
-">
+						    <input required="" type="text" class="form-control" id="transmision" name="transmision">
 						  </div>
 						  <div class="form-group">
 						    <label for="precio">Precio</label>
-						    <input required="" type="text" class="form-control" id="precio" name="precio" value="<?php echo $_smarty_tpl->tpl_vars['car']->value[0]['precio'];?>
-">
+						    <input required="" type="text" class="form-control" id="precio" name="precio">
 						  </div>
 						  <div class="form-group">
 						    <label for="exampleInputFile">Seleccionar imagen</label>
@@ -276,7 +234,7 @@ $_smarty_tpl->tpl_vars['__smarty_section_x'] = $__section_x_3_saved;
 						<div class="col-lg-4"></div>
 						<div class="col-lg-4">
 		   				    <button type="button" class="btn btn-default" onclick="history.back()">Volver</button>
-						    <button type="submit" class="btn btn-primary">Gravar</button>
+						    <button type="submit" class="btn btn-primary">Registrar</button>
 						</div>
 						<div class="col-lg-4"></div>
 					</div>

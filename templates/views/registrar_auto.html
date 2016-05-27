@@ -8,22 +8,23 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="container">
-				<form action="update_auto.php" method="post">
+				<form action="insert_auto.php" method="post">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8 align-center">
-							<img class="img-responsive" src="assets/images/{$car[0].Imagen}" width="626px" height="382px">
-						  	{if $update_car}
+							<h2>Registro de Autos</h2>
+							<hr>
+						  	{if $insert_car}
 							<div class="alert alert-success alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Completado!</strong> {$update_car}
+							  <strong>Completado!</strong> {$insert_car}
 							</div>
 						  	{/if}
-						  	{if $update_car_err}
+						  	{if $insert_car_err}
 							<div class="alert alert-danger alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Error!</strong> {$update_car_err}
+							  <strong>Error!</strong> {$insert_car_err}
 							</div>
 						  	{/if}
 						</div>
@@ -32,22 +33,17 @@
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-4">
-				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto" value="{$car[0].idAuto}">
+				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto">
 						  <div class="form-group">
 						    	<label for="cantidad">Cantidad</label>
-						    	<input required="" type="text" class="form-control" id="cantidad" name="cantidad" value="{$car[0].cantidad}">
+						    	<input required="" type="text" class="form-control" id="cantidad" name="cantidad">
 						  </div>
 						  <div class="form-group">
 						    <label for="marca">Marca</label>
 							<select class="form-control" name="marca" id="marca">
 							{section name=x loop=$combo_data.marcas}
-								{if $combo_data.marcas[x].codigoMarca == $car[0].Marca_codigoMarca}
-									<option value="{$combo_data.marcas[x].codigoMarca}" selected>
-										{$combo_data.marcas[x].Descripcion}
-								{else}
 									<option value="{$combo_data.marcas[x].codigoMarca}">
 										{$combo_data.marcas[x].Descripcion}
-								{/if}
 									</option>
 							{/section}
 							</select>
@@ -56,40 +52,30 @@
 						    <label for="modelo">Modelo</label>
 							<select class="form-control" name="modelo" id="modelo">
 							{section name=x loop=$combo_data.modelos}
-								{if $combo_data.modelos[x].CodigoModelo == $car[0].Modelo_CodigoModelo}
-									<option value="{$combo_data.modelos[x].CodigoModelo}" selected>
-										{$combo_data.modelos[x].Descripcion}
-								{else}
 									<option value="{$combo_data.modelos[x].CodigoModelo}">
 										{$combo_data.modelos[x].Descripcion}
-								{/if}
 									</option>
 							{/section}
 							</select>
 						  </div>
 						  <div class="form-group">
 						    <label for="ano_fabricacion">Año de fabricación</label>
-						    <input required="" type="text" class="form-control" id="ano_fabricacion" name="ano_fabricacion" value="{$car[0].Ano_fabricacion}">
+						    <input required="" type="text" class="form-control" id="ano_fabricacion" name="ano_fabricacion">
 						  </div>
 						  <div class="form-group">
 						    <label for="ano_modelo">Año de modelo</label>
-						    <input required="" type="text" class="form-control" id="ano_modelo" name="ano_modelo" value="{$car[0].Ano_Modelo}">
+						    <input required="" type="text" class="form-control" id="ano_modelo" name="ano_modelo">
 						  </div>
 						  <div class="form-group">
 						    <label for="n_motor">Número de motor</label>
-						    <input required="" type="text" class="form-control" id="n_motor" name="n_motor" value="{$car[0].Numero_Motor}">
+						    <input required="" type="text" class="form-control" id="n_motor" name="n_motor">
 						  </div>
 						  <div class="form-group">
 						    <label for="color">Color</label>
 							<select class="form-control" name="color" id="color">
 							{section name=x loop=$combo_data.colores}
-								{if $combo_data.colores[x].CodigoColor == $car[0].Color_CodigoColor}
-									<option value="{$combo_data.colores[x].CodigoColor}" selected>
-										{$combo_data.colores[x].Des}
-								{else}
 									<option value="{$combo_data.colores[x].CodigoColor}">
 										{$combo_data.colores[x].Des}
-								{/if}
 									</option>
 							{/section}
 							</select>
@@ -98,54 +84,49 @@
 						    <label for="combustible">Combustible</label>
 							<select class="form-control" name="combustible" id="combustible">
 							{section name=x loop=$combo_data.combustibles}
-								{if $combo_data.combustibles[x].codCombustible == $car[0].Combustible_codCombustible}
-									<option value="{$combo_data.combustibles[x].codCombustible}" selected>
-										{$combo_data.combustibles[x].desCom}
-								{else}
 									<option value="{$combo_data.combustibles[x].codCombustible}">
 										{$combo_data.combustibles[x].desCom}
-								{/if}
 									</option>
 							{/section}
 							</select>
 						  </div>
 						  <div class="form-group">
 						    <label for="cilindros">Cilindros</label>
-						    <input required="" type="text" class="form-control" id="cilindros" name="cilindros" value="{$car[0].Numero_Cilindros}">
+						    <input required="" type="text" class="form-control" id="cilindros" name="cilindros">
 						  </div>		
 						</div>
 						<div class="col-lg-4">
 						  <div class="form-group">
 						    <label for="ejes">Ejes</label>
-						    <input required="" type="text" class="form-control" id="ejes" name="ejes" value="{$car[0].Ejes}">
+						    <input required="" type="text" class="form-control" id="ejes" name="ejes">
 						  </div>
 						  <div class="form-group">
 						    <label for="asientos">Numero de asientos</label>
-						    <input required="" type="text" class="form-control" id="asientos" name="asientos" value="{$car[0].Asientos}">
+						    <input required="" type="text" class="form-control" id="asientos" name="asientos">
 						  </div>
 						  <div class="form-group">
 						    <label for="traccion">Tracción</label>
-						    <input required="" type="text" class="form-control" id="traccion" name="traccion" value="{$car[0].Traccion}">
+						    <input required="" type="text" class="form-control" id="traccion" name="traccion">
 						  </div>
 						  <div class="form-group">
 						    <label for="puertas">Número de puertas</label>
-						    <input required="" type="text" class="form-control" id="puertas" name="puertas" value="{$car[0].Puertas}">
+						    <input required="" type="text" class="form-control" id="puertas" name="puertas">
 						  </div>
 						  <div class="form-group">
 						    <label for="peso_seco">Peso seco</label>
-						    <input required="" type="text" class="form-control" id="peso_seco" name="peso_seco" value="{$car[0].Peso_Seco}">
+						    <input required="" type="text" class="form-control" id="peso_seco" name="peso_seco">
 						  </div>
 						  <div class="form-group">
 						    <label for="peso_bruto">Peso bruto</label>
-						    <input required="" type="text" class="form-control" id="peso_bruto" name="peso_bruto" value="{$car[0].Peso_Bruto}">
+						    <input required="" type="text" class="form-control" id="peso_bruto" name="peso_bruto">
 						  </div>
 						  <div class="form-group">
 						    <label for="transmision">Transmision</label>
-						    <input required="" type="text" class="form-control" id="transmision" name="transmision" value="{$car[0].Transmision}">
+						    <input required="" type="text" class="form-control" id="transmision" name="transmision">
 						  </div>
 						  <div class="form-group">
 						    <label for="precio">Precio</label>
-						    <input required="" type="text" class="form-control" id="precio" name="precio" value="{$car[0].precio}">
+						    <input required="" type="text" class="form-control" id="precio" name="precio">
 						  </div>
 						  <div class="form-group">
 						    <label for="exampleInputFile">Seleccionar imagen</label>
@@ -159,7 +140,7 @@
 						<div class="col-lg-4"></div>
 						<div class="col-lg-4">
 		   				    <button type="button" class="btn btn-default" onclick="history.back()">Volver</button>
-						    <button type="submit" class="btn btn-primary">Gravar</button>
+						    <button type="submit" class="btn btn-primary">Registrar</button>
 						</div>
 						<div class="col-lg-4"></div>
 					</div>

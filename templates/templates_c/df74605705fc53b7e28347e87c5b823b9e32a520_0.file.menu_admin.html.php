@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.28, created on 2016-05-26 19:39:14
+/* Smarty version 3.1.28, created on 2016-05-28 00:21:12
   from "/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/menu_admin.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.28',
-  'unifunc' => 'content_574734c2c7efe0_13530131',
+  'unifunc' => 'content_5748c8582a1514_60341830',
   'file_dependency' => 
   array (
     'df74605705fc53b7e28347e87c5b823b9e32a520' => 
     array (
       0 => '/Users/osanchez/Php/TP1-AplicacionesWeb-TELESUP/templates/views/menu_admin.html',
-      1 => 1464284353,
+      1 => 1464387667,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574734c2c7efe0_13530131 ($_smarty_tpl) {
+function content_5748c8582a1514_60341830 ($_smarty_tpl) {
 ?>
 <div class="navbar navbar-default bottom-none">
   <div class="container-fluid">
@@ -39,7 +39,7 @@ function content_574734c2c7efe0_13530131 ($_smarty_tpl) {
           <ul class="dropdown-menu">
             <li><a href="autos.php">Listar</a></li>
             <li class="divider"></li>
-            <li><a href="javascript:void(0)">Registrar</a></li>
+            <li><a href="registrar_auto.php">Registrar</a></li>
           </ul>
         </li>
 

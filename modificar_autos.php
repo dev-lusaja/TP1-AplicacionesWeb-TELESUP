@@ -4,24 +4,30 @@ try {
 	Functions::SessionValidate();
 
 	$id = $_REQUEST['id'];
-	$sql = "
-		SELECT a.*,m.Descripcion as 'marca', mo.Descripcion as 'modelo', c.Des as 'color', co.desCom as 'combustible'  FROM auto a 
-		inner join marca m on (a.Marca_codigoMarca = m.codigoMarca)
-		inner join modelo mo on (a.Modelo_CodigoModelo = mo.CodigoModelo)
-		inner join color c on (a.Color_CodigoColor = c.CodigoColor)
-		inner join combustible co on (a.Combustible_codCombustible = co.codCombustible)
-		WHERE idAuto=$id";
+	$sql = "SELECT * FROM auto WHERE idAuto=$id";
 
 	$mysql = new Mysql();
 	$auto = $mysql->Query($sql);
 
+	$comboData = Functions::ComboboxAutoData();
+
 	$type =	$_SESSION['type'];
+	
+	$update_car = isset($_SESSION['update_car'])?$_SESSION['update_car']:false;
+	unset($_SESSION['update_car']);
+
+	$update_car_err = isset($_SESSION['update_car_error'])?$_SESSION['update_car_error']:false;
+	unset($_SESSION['update_car_error']);
 	
 	$templates = new clsTemplates();
 	$templates->assign('menu_type', $type);
+	$templates->assign('update_car', $update_car);
+	$templates->assign('update_car_err', $update_car_err);
 	$templates->assign('car', $auto);
+	$templates->assign('combo_data', $comboData);
 	$templates->display('editar_auto.html');
 } catch (Exception $e) {
+	$templates = new clsTemplates();
 	$templates->assign( 'message', $e->getMessage() );
 	$templates->display('error.html');
 }
