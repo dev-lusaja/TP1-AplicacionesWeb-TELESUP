@@ -1,11 +1,10 @@
-<?php 
+<?php
 try {
 	require('libs/autoload.php');
 	Functions::SessionValidate();
-	$templates = new clsTemplates();
-	$type = $_SESSION['type'];
-	$templates->assign('menu_type', $type);
-	$templates->display('perfil.html');
+	$id = $_REQUEST['id'];
+	clsCar::Delete($id);
+	Functions::Location("autos.php");
 } catch (Exception $e) {
 	$templates = new clsTemplates();
 	$templates->assign( 'message', $e->getMessage() );

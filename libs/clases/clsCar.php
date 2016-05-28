@@ -42,6 +42,14 @@ class clsCar
 		}
 	}
 
+	public static function Delete($id)
+	{
+		Functions::validateVariable($id, 'integer');
+		$mysql = new Mysql();
+		$sql = "DELETE FROM auto WHERE idAuto = $id";
+		$auto = $mysql->Query($sql);
+	}
+
 	private static function SetFields($data)
 	{
 
