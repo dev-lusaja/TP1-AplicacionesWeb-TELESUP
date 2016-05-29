@@ -8,23 +8,23 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="container">
-				<form action="update_combustible.php" method="post">
+				<form action="update_usuario.php" method="post">
 				<div class="container">
-					<h2>Edición de combustible</h2>
+					<h2>Edición de usuario</h2>
 					<hr>
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8 align-center">
-						  	{if $update_gas}
+						  	{if $update_usuario}
 							<div class="alert alert-success alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Completado!</strong> {$update_gas}
+							  <strong>Completado!</strong> {$update_usuario}
 							</div>
 						  	{/if}
-						  	{if $update_gas_err}
+						  	{if $update_usuario_err}
 							<div class="alert alert-danger alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Error!</strong> {$update_gas_err}
+							  <strong>Error!</strong> {$update_usuario_err}
 							</div>
 						  	{/if}
 						</div>
@@ -33,10 +33,25 @@
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-4">
-				    	  <input type="hidden" class="form-control" id="codCombustible" name="codCombustible" value="{$gas[0].	}">
+				    	  <input type="hidden" class="form-control" id="idUsuario" name="idUsuario" value="{$usuario[0].idUsuario}">
 						  <div class="form-group">
-						    	<label for="descipcion">Descripción</label>
-						    	<input required="" type="text" class="form-control" id="descripcion" name="descripcion" value="{$gas[0].desCom}">
+						    	<label for="descipcion">Usuario</label>
+						    	<input required="" type="text" class="form-control" id="usuario" name="usuario" value="{$usuario[0].Nombre_Usuario}">
+						  </div>
+						  <div class="form-group">
+						    	<label for="descipcion">Contraseña</label>
+						    	<input required="" type="password" class="form-control" id="clave" name="clave" value="{$usuario[0].Clave}">
+						  </div>
+  						  <div class="form-group">
+						    	<label for="descipcion">Contraseña</label>
+						    	<label for="descripcion">Tipo de usuario</label>
+								<select class="form-control" name="tipo_usuario" id="tipo_usuario">
+								{section name=x loop=$combo_user}
+										<option value="{$combo_user[x].CodTipo}">
+											{$combo_user[x].tipo}
+										</option>
+								{/section}
+								</select>
 						  </div>
 						</div>
 						<div class="col-lg-2"></div>

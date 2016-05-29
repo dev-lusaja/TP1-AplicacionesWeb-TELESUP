@@ -1,0 +1,71 @@
+{include file='header.html'}
+{if $menu_type == 1}
+	{include file='menu_admin.html'}
+{else}
+	{include file='menu_venta.html'}
+{/if}
+<div class="container-fluid container-perfil">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="container">
+				<form>
+				<div class="container">
+					<h2>Calculo de venta</h2>
+					<hr>
+					<div class="row">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-4">
+				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto" value="{$auto[0].idAuto}">
+						  <div class="form-group">
+						    	<label for="venta_precio">Precio</label>
+						    	<input required="" type="text" class="form-control" id="venta_precio" name="venta_precio" value="{$auto[0].precio}">
+						  </div>
+						  <div class="form-group">
+						    	<label for="venta_cantidad">Cantidad</label>
+						    	<input required="" type="text" class="form-control" id="venta_cantidad" name="venta_cantidad" required="">
+						  </div>
+						  <div class="form-group">
+						    	<label for="subtotal">Subtotal</label>
+						    	<input type="text" class="form-control" id="subtotal" name="subtotal" disabled="">
+						  </div>
+						  <div class="form-group">
+						    	<label for="igv">IGV</label>
+						    	<input type="text" class="form-control" id="igv" name="igv" disabled="">
+						  </div>
+						  <div class="form-group">
+						    	<label for="total">Total</label>
+						    	<input type="text" class="form-control" id="total" name="total" disabled="">
+						  </div>
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4"></div>
+						<div class="col-lg-4">
+		   				    <button type="reset" class="btn btn-default">Borrar</button>
+						    <button type="button" class="btn btn-primary" onclick="calcular()">Calcular</button>
+						</div>
+						<div class="col-lg-4"></div>
+					</div>
+				</div>
+
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    function calcular() {
+        var cantidad = $('#venta_cantidad').val();
+        var precio = $('#venta_precio').val();
+        var subtotal = cantidad * precio;
+        var igv = subtotal * 0.18;
+        var total = subtotal + igv;
+
+        $('#subtotal').val(subtotal);
+        $('#igv').val(igv);
+        $('#total').val(total);
+    }
+</script>
+
+{include file='footer.html'}

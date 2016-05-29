@@ -8,23 +8,23 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="container">
-				<form action="update_combustible.php" method="post">
+				<form action="update_inventario.php" method="post">
 				<div class="container">
-					<h2>Edición de combustible</h2>
+					<h2>Edición de invetario</h2>
 					<hr>
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8 align-center">
-						  	{if $update_gas}
+						  	{if $update_inventario}
 							<div class="alert alert-success alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Completado!</strong> {$update_gas}
+							  <strong>Completado!</strong> {$update_inventario}
 							</div>
 						  	{/if}
-						  	{if $update_gas_err}
+						  	{if $update_inventario_err}
 							<div class="alert alert-danger alert-dismissible" role="alert">
 							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							  <strong>Error!</strong> {$update_gas_err}
+							  <strong>Error!</strong> {$update_inventario_err}
 							</div>
 						  	{/if}
 						</div>
@@ -33,10 +33,10 @@
 					<div class="row">
 						<div class="col-lg-2"></div>
 						<div class="col-lg-4">
-				    	  <input type="hidden" class="form-control" id="codCombustible" name="codCombustible" value="{$gas[0].	}">
+				    	  <input type="hidden" class="form-control" id="idAuto" name="idAuto" value="{$auto[0].idAuto}">
 						  <div class="form-group">
-						    	<label for="descipcion">Descripción</label>
-						    	<input required="" type="text" class="form-control" id="descripcion" name="descripcion" value="{$gas[0].desCom}">
+						    	<label for="descipcion">Cantidad</label>
+						    	<input required="" type="text" class="form-control" id="cantidad" name="cantidad" value="{$auto[0].cantidad}">
 						  </div>
 						</div>
 						<div class="col-lg-2"></div>
