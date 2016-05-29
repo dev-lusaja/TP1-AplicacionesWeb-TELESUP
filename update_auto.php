@@ -10,8 +10,7 @@ try {
 	$_SESSION['update_car'] = $message;
 	Functions::Location("modificar_autos.php?id=$id");
 } catch (Exception $e) {
-	$id = $_POST['idAuto'];
 	$_SESSION['update_car_error'] = $e->getMessage();
-	Functions::Location("modificar_autos.php?id=$id");
+	Functions::Location("modificar_autos.php?id={$_POST['idAuto']}");
 }
 ?>

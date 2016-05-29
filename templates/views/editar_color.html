@@ -1,0 +1,59 @@
+{include file='header.html'}
+{if $menu_type == 1}
+	{include file='menu_admin.html'}
+{else}
+	{include file='menu_venta.html'}
+{/if}
+<div class="container-fluid container-perfil">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="container">
+				<form action="update_color.php" method="post">
+				<div class="container">
+					<h2>Edición de color</h2>
+					<hr>
+					<div class="row">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-8 align-center">
+						  	{if $update_color}
+							<div class="alert alert-success alert-dismissible" role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Completado!</strong> {$update_color}
+							</div>
+						  	{/if}
+						  	{if $update_color_err}
+							<div class="alert alert-danger alert-dismissible" role="alert">
+							  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							  <strong>Error!</strong> {$update_color_err}
+							</div>
+						  	{/if}
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-4">
+				    	  <input type="hidden" class="form-control" id="CodigoColor" name="CodigoColor" value="{$color[0].CodigoColor}">
+						  <div class="form-group">
+						    	<label for="descipcion">Descripción</label>
+						    	<input required="" type="text" class="form-control" id="descripcion" name="descripcion" value="{$color[0].Des}">
+						  </div>
+						</div>
+						<div class="col-lg-2"></div>
+					</div>
+					<div class="row">
+						<div class="col-lg-4"></div>
+						<div class="col-lg-4">
+		   				    <button type="button" class="btn btn-default" onclick="history.back()">Volver</button>
+						    <button type="submit" class="btn btn-primary">Grabar</button>
+						</div>
+						<div class="col-lg-4"></div>
+					</div>
+				</div>
+
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+{include file='footer.html'}
